@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #1e1e1e;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img.profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    img.profile:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #b0b0b0;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: #ffffff;
+      background-color: #3a8df7;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #5aa2f8;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="introContainer">
+    <img src="profile.jpg" alt="Profile Image" class="profile">
+    <h1>Kernel(UncensoredUsers)</h1>
+    <p>로블록스 게임 개발과, 파이썬 소프트웨어 개발을 하고 있는 커널이라고 합니다.</p>
+    <a href="123" class="button">더 알아보기</a>
+  </div>
+
+  <script>
+    // 페이드인 효과
+    document.addEventListener("DOMContentLoaded", function() {
+      const introContainer = document.getElementById('introContainer');
+      setTimeout(() => {
+        introContainer.classList.add('visible');
+      }, 500); // 페이지 로딩 후 0.5초 뒤 페이드인 시작
+    });
+  </script>
+</body>
+</html>
